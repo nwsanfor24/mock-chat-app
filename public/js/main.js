@@ -25,6 +25,7 @@ function outputMessage(message) {
     div.classList.add('message');
     div.innerHTML = `<p class="meta">Marco <span>5:31pm</span></p>
     <p class="text">
-        I'm an anxious freakin' dog. Woof woof woof.
+        ${message}
     </p>`;
+    document.querySelector('.chat-messages').appendChild(div);
 }
