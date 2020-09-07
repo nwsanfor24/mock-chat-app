@@ -33,7 +33,13 @@ chatForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     //Get message text
-    const msg = e.target.elements.msg.value;
+    let msg = e.target.elements.msg.value;
+
+    msg = msg.trim();
+
+    if (!msg) {
+        return false;
+    }
 
     //Emit message to server
     socket.emit('chatMessage', msg);
