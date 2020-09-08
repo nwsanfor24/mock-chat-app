@@ -9,7 +9,6 @@ const {
     userLeave,
     getRoomUsers
 } = require('./utils/users');
-const { isPrimitive } = require('util');
 
 const app = express();
 const server = http.createServer(app);
@@ -19,7 +18,7 @@ const io = socketio(server);
 //Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-const botName = 'ChatCord Bot';
+const botName = 'Chat Bot';
 
 //Run when client connects
 io.on('connection', socket =>{
